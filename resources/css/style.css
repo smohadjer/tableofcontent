@@ -1,0 +1,23 @@
+/* all styles are optional */
+body {
+  font-size: 2em;
+  margin: auto; }
+
+* {
+  box-sizing: border-box; }
+
+aside.toc {
+  position: fixed;
+  height: 100%;
+  width: 25%;
+  background: #c8c8c8;
+  left: 0;
+  top: 0;
+  padding: 20px; }
+  aside.toc ul {
+    list-style: none;
+    background: yellow; }
+
+main {
+  margin-left: 25%;
+  padding: 20px 2%; }
