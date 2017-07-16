@@ -1,0 +1,195 @@
+@mixin state($color) {
+	font-size: 12px;
+	line-height: 1;
+	vertical-align: 3px;
+	font-weight: normal;
+	background: $color;
+	color: white;
+	padding: 3px 7px;
+	font-style: italic;
+}
+
+$grey: #ccc;
+$grey-light: #ddd;
+
+body {
+	color: #333;
+	font-size: 1em;
+	font-family: Arial, sans-serif;
+	margin: 0;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	a {
+		text-decoration: none;
+		color: #06c;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	dd {
+		margin-left: 0;
+	}
+
+	aside {
+		@media (max-width: 767px) {
+			display: none;
+		}
+
+		padding: 3% 5% 3% 2%;
+		position: fixed;
+		background: $grey-light;
+		left: 0;
+		top: 30%;
+		//height: 100%;
+		font-size: 1.3em;
+
+
+		ul {
+
+			li {
+				margin-bottom: 20px;
+			}
+
+			li, a {
+				color: blue;
+			}
+
+			li.selected,
+			li.selected a {
+				color: #333;
+				font-weight: bold;
+			}
+		}
+	}
+
+	main {
+		margin: 20px;
+
+		@media (min-width: 768px) {
+			margin-left: 25%;
+			margin-right: 10%;
+		}
+
+		header {
+			background: #333;
+			color: #fff;
+			padding: 20px;
+
+			@media (min-width: 768px) {
+				padding: 30px 30px 20px;
+				margin: 50px 0 0;
+			}
+
+			h1 {
+				margin: 0;
+				font-weight: normal;
+				font-size: 2.5em;
+			}
+
+			dl {
+				line-height: 1.3em;
+				margin-top: 10px;
+
+				dt {
+					float: left;
+					margin-right: 5px;
+					color: $grey;
+				}
+			}
+
+			a {
+				color: white;
+			}
+		}
+
+		section {
+			border-bottom: dotted 1px $grey;
+			padding-bottom: 30px;
+			padding-top: 1px;
+
+			&:last-of-type {
+				border: none;
+				padding-bottom: 0;
+			}
+
+			h2 {
+				font-size: 2.5em;
+				margin-bottom: 0;
+
+				+ p {
+					margin-top: 5px;
+
+					+ ul {
+						margin-top: 25px;
+					}
+				}
+			}
+
+			h3 {
+				margin: 0;
+				font-size: 1.3em;
+
+				+ p {
+					font-size: 0.9em;
+					color: #666;
+				}
+
+				a + a[class^="state-"] {
+					margin-left: 5px;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+			}
+
+			p {
+				margin-top: 0;
+			}
+		}
+
+		.state-wip {
+			@include state(orange);
+		}
+		.state-deprecated {
+			@include state(red);
+		}
+		.state-donotcopy {
+			@include state(darkred);
+		}
+		.state-new {
+			@include state(green);
+		}
+
+		#legend {
+			margin: 50px 0;
+			background: $grey-light;
+			padding: 10px 20px;
+			font-size: 0.9em;
+
+			h3 {
+				margin-bottom: 20px;
+			}
+
+			dt {
+				display: inline-block;
+			}
+
+			dd {
+				margin: 5px 0 20px 0;
+			}
+		}
+	}
+}

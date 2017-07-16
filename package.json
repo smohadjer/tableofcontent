@@ -1,0 +1,24 @@
+{
+  "name": "toc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+	  "sass": "node-sass sass -o css",
+	  "sass:watch": "npm run sass && node-sass sass -wo css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smohadjer/tableofcontent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smohadjer/tableofcontent/issues"
+  },
+  "homepage": "https://github.com/smohadjer/tableofcontent#readme",
+  "devDependencies": {
+	  "node-sass": "^4.5.3"
+  }
+}
