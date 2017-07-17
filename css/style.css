@@ -50,8 +50,7 @@ body {
       color: white; }
     body .styleguide__aside ul li.selected,
     body .styleguide__aside ul li.selected a {
-      color: orange;
-      font-weight: bold; }
+      color: orange; }
     body .styleguide__aside dl {
       line-height: 1.4em;
       font-size: 0.85em;
@@ -61,7 +60,7 @@ body {
       body .styleguide__aside dl dt {
         float: left;
         margin-right: 5px;
-        font-weight: bold; }
+        color: #ccc; }
   body main {
     margin: 20px;
     margin-top: 70px;
@@ -91,7 +90,8 @@ body {
           font-size: 2.3em; } }
       @media (min-width: 1024px) {
         body main h1 {
-          font-size: 2.5em; } }
+          font-size: 2.5em;
+          margin-bottom: 20px; } }
     body main section {
       border-bottom: dotted 1px #ccc;
       padding-bottom: 20px;
@@ -101,8 +101,8 @@ body {
         padding-bottom: 0; }
       @media (min-width: 1024px) {
         body main section {
-          padding-bottom: 40px;
-          margin-bottom: 30px; } }
+          padding-bottom: 30px;
+          margin-bottom: 20px; } }
       body main section h2 {
         font-size: 1.5em;
         margin-bottom: 0;
