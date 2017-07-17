@@ -13,19 +13,21 @@
 		</style>
 		<script>
 			$(function() {
-				console.log('DOM is ready!');
-				$('.styleguide__aside ul').inPageScrollingNav();
+				$('.styleguide__aside ul').inPageScrollingNav({
+					offset: function() {
+						if ($(window).width() < 768) {
+							return 48;
+						} else {
+							return 0;
+						}
+					}
+				});
 
-				/* http://perfectionkills.com/detecting-event-support-without-browser-sniffing/ */
-				var eventName = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
 				var offcanvasIsInitialized = false;
 				var mql = window.matchMedia("(max-width: 767px)");
 
-
-				$('.styleguide__aside ul').on(eventName, 'li a', function() {
-				//	window.setTimeout(function() {
-						$('.mobile-menu span').trigger(eventName);
-				//	}, 0);
+				$('.styleguide__aside ul').on('click', 'li a', function() {
+					$('html').removeClass('offcanvas');
 				});
 
 				mql.addListener(mqHandler);
@@ -36,14 +38,19 @@
 						console.log('match');
 
 						if (!offcanvasIsInitialized) {
-							$('.mobile-menu span').on(eventName, function() {
-								$('html').removeClass('end');
+							$('.mobile-menu span').on('click', function() {
 								$('html').toggleClass('offcanvas');
 							});
 
 							$('nav').on('transitionend', function(e) {
 								console.log('transtion end');
-								$('html').addClass('end');
+
+								if ($('html').hasClass('offcanvas')) {
+									$('main').on('click.offcanvas', function(e) {
+										$('html').removeClass('offcanvas');
+										$('body').off('click.offcanvas');
+									});
+								}
 							});
 
 							offcanvasIsInitialized = true;
@@ -96,7 +103,7 @@
 					</li>
 					<li>
 						<article>
-							<h3><a href="/">Officia</a> <a class="state-new" href="#legend">New</a></h3>
+							<h3><a href="/">Officia</a></h3>
 							<p>Ssunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</article>
 					</li>
@@ -114,7 +121,7 @@
 					</li>
 					<li>
 						<article>
-							<h3><a href="/">Officia</a> <a class="state-donotcopy" href="#legend">Do not copy</a></h3>
+							<h3><a href="/">Officia</a></h3>
 							<p>Ssunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</article>
 					</li>
@@ -174,7 +181,7 @@
 					</li>
 					<li>
 						<article>
-							<h3><a href="/">Cupidatat non Proident</a> <a class="state-wip" href="#legend">Work in progress</a></h3>
+							<h3><a href="/">Cupidatat non Proident</a></h3>
 							<p>Excepteur sint occaecat cupidatat non proident.</p>
 						</article>
 					</li>
@@ -270,7 +277,7 @@
 					</li>
 					<li>
 						<article>
-							<h3><a href="/">Lorem ipsum</a> <a class="state-wip" href="#legend">Work in progress</a></h3>
+							<h3><a href="/">Lorem ipsum</a></h3>
 							<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</article>
 					</li>
@@ -282,7 +289,7 @@
 					</li>
 					<li>
 						<article>
-							<h3><a href="/">Officia</a> <a class="state-donotcopy" href="#legend">Do not copy</a></h3>
+							<h3><a href="/">Officia</a></h3>
 							<p>Ssunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</article>
 					</li>

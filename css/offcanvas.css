@@ -21,12 +21,6 @@
 		left: 0;
 	}
 
-	.offcanvas.end nav {
-	}
-
-	.offcanvas.end body > *:not(nav):not(.mobile-menu) {
-	}
-
 	.mobile-menu {
 		display: block;
 		border-bottom: solid 1px #ccc;
@@ -38,7 +32,7 @@
 	}
 
 	.mobile-menu span {
-		padding: 1em;
+		padding: 1em 20px;
 		display: block;
 		cursor: pointer;
 	}

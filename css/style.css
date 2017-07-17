@@ -29,18 +29,23 @@ body {
         left: 0;
         top: 0;
         width: 30%;
-        font-size: 1.3em;
+        font-size: 1.1em;
         height: 100%;
-        box-shadow: none; } }
+        box-shadow: none;
+        max-width: 300px; } }
+    @media (min-width: 1024px) {
+      body .styleguide__aside {
+        padding-top: 50px; } }
     body .styleguide__aside ul li {
-      margin-bottom: 15px;
-      padding-bottom: 15px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
       border-bottom: solid 1px #ccc;
-      font-size: 1.2em;
+      font-size: 1.1em;
       line-height: 1; }
       @media (min-width: 768px) {
         body .styleguide__aside ul li {
-          margin-bottom: 20px; } }
+          margin-bottom: 15px;
+          padding-bottom: 15px; } }
     body .styleguide__aside ul li, body .styleguide__aside ul a {
       color: white; }
     body .styleguide__aside ul li.selected,
@@ -59,7 +64,8 @@ body {
         font-weight: bold; }
   body main {
     margin: 20px;
-    margin-top: 70px; }
+    margin-top: 70px;
+    max-width: 700px; }
     @media (min-width: 768px) {
       body main {
         margin-left: 35%;
@@ -67,30 +73,44 @@ body {
         margin-top: 5%; } }
     @media (min-width: 1024px) {
       body main {
-        margin-left: 30%;
         margin-right: 10%;
-        margin-top: 5%; } }
+        margin-left: 380px;
+        margin-top: 50px; } }
     body main h1 {
-      font-size: 1.5em;
+      font-size: 1.4em;
       margin: 0; }
+      @media (max-width: 767px) {
+        body main h1 {
+          background: #333;
+          color: white;
+          text-align: center;
+          padding: 10px; } }
       @media (min-width: 768px) {
         body main h1 {
           font-weight: normal;
           font-size: 2.3em; } }
       @media (min-width: 1024px) {
         body main h1 {
-          font-size: 3em; } }
+          font-size: 2.5em; } }
     body main section {
       border-bottom: dotted 1px #ccc;
-      padding-bottom: 30px;
+      padding-bottom: 20px;
       padding-top: 1px; }
       body main section:last-of-type {
         border: none;
         padding-bottom: 0; }
+      @media (min-width: 1024px) {
+        body main section {
+          padding-bottom: 40px;
+          margin-bottom: 30px; } }
       body main section h2 {
         font-size: 1.5em;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        margin-top: 20px; }
         @media (min-width: 768px) {
+          body main section h2 {
+            font-size: 2em; } }
+        @media (min-width: 1280px) {
           body main section h2 {
             font-size: 2.5em; } }
         body main section h2 + p {
@@ -103,9 +123,9 @@ body {
         body main section h3 + p {
           font-size: 0.9em;
           color: #666; }
-        body main section h3 a + a[class^="state-"] {
-          margin-left: 5px; }
-          body main section h3 a + a[class^="state-"]:hover {
+        body main section h3 a {
+          margin-right: 5px; }
+          body main section h3 a + a:hover {
             text-decoration: none; }
       body main section p {
         margin-top: 0; }
@@ -146,13 +166,18 @@ body {
       padding: 3px 7px;
       font-style: italic; }
     body main #legend {
-      margin: 50px 0;
+      margin: 30px 0 0;
       background: #ddd;
       padding: 10px 20px;
-      font-size: 0.9em; }
+      font-size: 0.8em; }
+      @media (min-width: 1024px) {
+        body main #legend {
+          margin-top: 50px;
+          margin-bottom: 50px; } }
       body main #legend h3 {
-        margin-bottom: 20px; }
+        margin-bottom: 20px;
+        font-size: 1.4em; }
       body main #legend dt {
         display: inline-block; }
       body main #legend dd {
-        margin: 5px 0 20px 0; }
+        margin: 3px 0 20px 0; }

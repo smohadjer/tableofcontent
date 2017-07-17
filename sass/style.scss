@@ -54,21 +54,27 @@ body {
 			left: 0;
 			top: 0;
 			width: 30%;
-			font-size: 1.3em;
+			font-size: 1.1em;
 			height: 100%;
 			box-shadow: none;
+			max-width: 300px;
+		}
+
+		@media (min-width: 1024px) {
+			padding-top: 50px;
 		}
 
 		ul {
 			li {
-				margin-bottom: 15px;
-				padding-bottom: 15px;
+				margin-bottom: 12px;
+				padding-bottom: 12px;
 				border-bottom: solid 1px #ccc;
-				font-size: 1.2em;
+				font-size: 1.1em;
 				line-height: 1;
 
 				@media (min-width: 768px) {
-					margin-bottom: 20px;
+					margin-bottom: 15px;
+					padding-bottom: 15px;
 
 				}
 			}
@@ -104,6 +110,7 @@ body {
 	main {
 		margin: 20px;
 		margin-top: 70px;
+		max-width: 700px;
 
 		@media (min-width: 768px) {
 			margin-left: 35%;
@@ -112,14 +119,21 @@ body {
 		}
 
 		@media (min-width: 1024px) {
-			margin-left: 30%;
 			margin-right: 10%;
-			margin-top: 5%;
+			margin-left: 380px;
+			margin-top: 50px;
 		}
 
 		h1 {
-			font-size: 1.5em;
+			font-size: 1.4em;
 			margin: 0;
+
+			@media (max-width: 767px) {
+				background: #333;
+				color: white;
+				text-align: center;
+				padding: 10px;
+			}
 
 			@media (min-width: 768px) {
 				font-weight: normal;
@@ -127,14 +141,14 @@ body {
 			}
 
 			@media (min-width: 1024px) {
-				font-size: 3em;
+				font-size: 2.5em;
 			}
 
 		}
 
 		section {
 			border-bottom: dotted 1px $grey;
-			padding-bottom: 30px;
+			padding-bottom: 20px;
 			padding-top: 1px;
 
 			&:last-of-type {
@@ -142,15 +156,23 @@ body {
 				padding-bottom: 0;
 			}
 
+			@media (min-width: 1024px) {
+				padding-bottom: 40px;
+				margin-bottom: 30px;
+			}
+
 			h2 {
 				font-size: 1.5em;
 				margin-bottom: 0;
+				margin-top: 20px;
 
 				@media (min-width: 768px) {
-					font-size: 2.5em;
-
+					font-size: 2em;
 				}
 
+				@media (min-width: 1280px) {
+					font-size: 2.5em;
+				}
 
 				+ p {
 					margin-top: 5px;
@@ -170,13 +192,15 @@ body {
 					color: #666;
 				}
 
-				a + a[class^="state-"] {
-					margin-left: 5px;
+				a {
+					margin-right: 5px;
 
-					&:hover {
+					& + a:hover {
 						text-decoration: none;
 					}
 				}
+
+
 
 			}
 
@@ -199,13 +223,19 @@ body {
 		}
 
 		#legend {
-			margin: 50px 0;
+			margin: 30px 0 0;
 			background: $grey-light;
 			padding: 10px 20px;
-			font-size: 0.9em;
+			font-size: 0.8em;
+
+			@media (min-width: 1024px) {
+				margin-top: 50px;
+				margin-bottom: 50px;
+			}
 
 			h3 {
 				margin-bottom: 20px;
+				font-size: 1.4em;
 			}
 
 			dt {
@@ -213,7 +243,7 @@ body {
 			}
 
 			dd {
-				margin: 5px 0 20px 0;
+				margin: 3px 0 20px 0;
 			}
 		}
 	}
