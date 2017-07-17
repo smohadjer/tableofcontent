@@ -1,0 +1,53 @@
+.mobile-menu {
+	display: none;
+}
+
+@media screen and (max-width: 767px) {
+	nav {
+		position: absolute;
+		box-sizing: border-box;
+		background: #fff;
+		left: calc(100% * -1);
+		width: 100%;
+		transition: left 0.4s;
+		transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+	}
+
+	.offcanvas,
+	.offcanvas body	{
+	}
+
+	.offcanvas nav {
+		left: 0;
+	}
+
+	.offcanvas.end nav {
+	}
+
+	.offcanvas.end body > *:not(nav):not(.mobile-menu) {
+	}
+
+	.mobile-menu {
+		display: block;
+		border-bottom: solid 1px #ccc;
+		position: fixed;
+		width: 100%;
+		height: 50px;
+		top: 0;
+		background: #fff;
+	}
+
+	.mobile-menu span {
+		padding: 1em;
+		display: block;
+		cursor: pointer;
+	}
+
+	.mobile-menu span:before {
+		content: attr(data-label);
+	}
+
+	.offcanvas .mobile-menu span:before {
+		content: attr(data-label-back);
+	}
+}

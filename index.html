@@ -8,17 +8,56 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 		<script src="js/vendor/jquery.inPageScrollingNav.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/offcanvas.css">
 		<style>
 		</style>
 		<script>
 			$(function() {
 				console.log('DOM is ready!');
-				$('.toc ul').inPageScrollingNav();
+				$('.styleguide__aside ul').inPageScrollingNav();
+
+				/* http://perfectionkills.com/detecting-event-support-without-browser-sniffing/ */
+				var eventName = ('ontouchstart' in document.documentElement) ? 'touchstart' : 'click';
+				var offcanvasIsInitialized = false;
+				var mql = window.matchMedia("(max-width: 767px)");
+
+
+				$('.styleguide__aside ul').on(eventName, 'li a', function() {
+				//	window.setTimeout(function() {
+						$('.mobile-menu span').trigger(eventName);
+				//	}, 0);
+				});
+
+				mql.addListener(mqHandler);
+				mqHandler(mql);
+
+				function mqHandler(mql) {
+					if (mql.matches) {
+						console.log('match');
+
+						if (!offcanvasIsInitialized) {
+							$('.mobile-menu span').on(eventName, function() {
+								$('html').removeClass('end');
+								$('html').toggleClass('offcanvas');
+							});
+
+							$('nav').on('transitionend', function(e) {
+								console.log('transtion end');
+								$('html').addClass('end');
+							});
+
+							offcanvasIsInitialized = true;
+						}
+					}
+				}
 			});
 		</script>
 	</head>
 	<body>
-		<aside class="toc">
+		<div class="mobile-menu">
+			<span data-label="Menu" data-label-back="< Back"></span>
+		</div>
+		<nav class="styleguide__aside">
 			<ul>
 				<li><a href="#components">Components</a></li>
 				<li><a href="#layouts">Layouts</a></li>
@@ -26,21 +65,19 @@
 				<li><a href="#dialoge">Dialoge</a></li>
 				<li><a href="#admin">Admin</a></li>
 			</ul>
-		</aside>
+			<dl>
+				<dt>Package:</dt>
+				<dd>prototype.net</dd>
+				<dt>Version:</dt>
+				<dd>1.0.0</dd>
+				<dt>Description:</dt>
+				<dd>XYZ Online Styleguide</dd>
+				<dt>Download:</dt>
+				<dd><a href="/">online.styleguide.zip</a></dd>
+			</dl>
+		</nav>
 		<main>
-			<header>
-				<h1>Online Styleguide</h1>
-				<dl class="styleguide__packageinfo">
-					<dt>Package:</dt>
-					<dd>prototype.net</dd>
-					<dt>Version:</dt>
-					<dd>1.0.0</dd>
-					<dt>Description:</dt>
-					<dd>TOC for Frontend Framework</dd>
-					<dt>Download:</dt>
-					<dd><a href="/">online.styleguide.zip</a></dd>
-				</dl>
-			</header>
+			<h1>XYZ Online Styleguide</h1>
 			<section id="components">
 				<h2>Components</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

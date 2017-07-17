@@ -16,51 +16,70 @@ body {
     padding: 0; }
   body dd {
     margin-left: 0; }
-  body aside {
-    padding: 3% 5% 3% 2%;
+  body .styleguide__aside {
+    background: #333;
+    color: white;
+    padding: 5% 20px 20px;
+    box-shadow: 0px 5px 10px 0px #999999;
     position: fixed;
-    background: #ddd;
-    left: 0;
-    top: 30%;
-    font-size: 1.3em; }
-    @media (max-width: 767px) {
-      body aside {
-        display: none; } }
-    body aside ul li {
-      margin-bottom: 20px; }
-    body aside ul li, body aside ul a {
-      color: blue; }
-    body aside ul li.selected,
-    body aside ul li.selected a {
-      color: #333;
+    top: 50px; }
+    @media (min-width: 768px) {
+      body .styleguide__aside {
+        padding: 5% 2% 20px;
+        left: 0;
+        top: 0;
+        width: 30%;
+        font-size: 1.3em;
+        height: 100%;
+        box-shadow: none; } }
+    body .styleguide__aside ul li {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: solid 1px #ccc;
+      font-size: 1.2em;
+      line-height: 1; }
+      @media (min-width: 768px) {
+        body .styleguide__aside ul li {
+          margin-bottom: 20px; } }
+    body .styleguide__aside ul li, body .styleguide__aside ul a {
+      color: white; }
+    body .styleguide__aside ul li.selected,
+    body .styleguide__aside ul li.selected a {
+      color: orange;
       font-weight: bold; }
+    body .styleguide__aside dl {
+      line-height: 1.4em;
+      font-size: 0.85em;
+      margin-top: 30px; }
+      body .styleguide__aside dl a {
+        color: orange; }
+      body .styleguide__aside dl dt {
+        float: left;
+        margin-right: 5px;
+        font-weight: bold; }
   body main {
-    margin: 20px; }
+    margin: 20px;
+    margin-top: 70px; }
     @media (min-width: 768px) {
       body main {
-        margin-left: 25%;
-        margin-right: 10%; } }
-    body main header {
-      background: #333;
-      color: #fff;
-      padding: 20px; }
+        margin-left: 35%;
+        margin-right: 5%;
+        margin-top: 5%; } }
+    @media (min-width: 1024px) {
+      body main {
+        margin-left: 30%;
+        margin-right: 10%;
+        margin-top: 5%; } }
+    body main h1 {
+      font-size: 1.5em;
+      margin: 0; }
       @media (min-width: 768px) {
-        body main header {
-          padding: 30px 30px 20px;
-          margin: 50px 0 0; } }
-      body main header h1 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 2.5em; }
-      body main header dl {
-        line-height: 1.3em;
-        margin-top: 10px; }
-        body main header dl dt {
-          float: left;
-          margin-right: 5px;
-          color: #ccc; }
-      body main header a {
-        color: white; }
+        body main h1 {
+          font-weight: normal;
+          font-size: 2.3em; } }
+      @media (min-width: 1024px) {
+        body main h1 {
+          font-size: 3em; } }
     body main section {
       border-bottom: dotted 1px #ccc;
       padding-bottom: 30px;
@@ -69,8 +88,11 @@ body {
         border: none;
         padding-bottom: 0; }
       body main section h2 {
-        font-size: 2.5em;
+        font-size: 1.5em;
         margin-bottom: 0; }
+        @media (min-width: 768px) {
+          body main section h2 {
+            font-size: 2.5em; } }
         body main section h2 + p {
           margin-top: 5px; }
           body main section h2 + p + ul {

@@ -41,33 +41,61 @@ body {
 		margin-left: 0;
 	}
 
-	aside {
-		@media (max-width: 767px) {
-			display: none;
+	.styleguide__aside {
+		background: #333;
+		color: white;
+		padding: 5% 20px 20px;
+		box-shadow: 0px 5px 10px 0px rgba(153,153,153,1);
+		position: fixed;
+		top: 50px;
+
+		@media (min-width: 768px) {
+			padding: 5% 2% 20px;
+			left: 0;
+			top: 0;
+			width: 30%;
+			font-size: 1.3em;
+			height: 100%;
+			box-shadow: none;
 		}
 
-		padding: 3% 5% 3% 2%;
-		position: fixed;
-		background: $grey-light;
-		left: 0;
-		top: 30%;
-		//height: 100%;
-		font-size: 1.3em;
-
-
 		ul {
-
 			li {
-				margin-bottom: 20px;
+				margin-bottom: 15px;
+				padding-bottom: 15px;
+				border-bottom: solid 1px #ccc;
+				font-size: 1.2em;
+				line-height: 1;
+
+				@media (min-width: 768px) {
+					margin-bottom: 20px;
+
+				}
 			}
 
 			li, a {
-				color: blue;
+				color: white;
 			}
 
 			li.selected,
 			li.selected a {
-				color: #333;
+				color: orange;
+				font-weight: bold;
+			}
+		}
+
+		dl {
+			line-height: 1.4em;
+			font-size: 0.85em;
+			margin-top: 30px;
+
+			a {
+				color: orange;
+			}
+
+			dt {
+				float: left;
+				margin-right: 5px;
 				font-weight: bold;
 			}
 		}
@@ -75,42 +103,33 @@ body {
 
 	main {
 		margin: 20px;
+		margin-top: 70px;
 
 		@media (min-width: 768px) {
-			margin-left: 25%;
-			margin-right: 10%;
+			margin-left: 35%;
+			margin-right: 5%;
+			margin-top: 5%;
 		}
 
-		header {
-			background: #333;
-			color: #fff;
-			padding: 20px;
+		@media (min-width: 1024px) {
+			margin-left: 30%;
+			margin-right: 10%;
+			margin-top: 5%;
+		}
+
+		h1 {
+			font-size: 1.5em;
+			margin: 0;
 
 			@media (min-width: 768px) {
-				padding: 30px 30px 20px;
-				margin: 50px 0 0;
-			}
-
-			h1 {
-				margin: 0;
 				font-weight: normal;
-				font-size: 2.5em;
+				font-size: 2.3em;
 			}
 
-			dl {
-				line-height: 1.3em;
-				margin-top: 10px;
-
-				dt {
-					float: left;
-					margin-right: 5px;
-					color: $grey;
-				}
+			@media (min-width: 1024px) {
+				font-size: 3em;
 			}
 
-			a {
-				color: white;
-			}
 		}
 
 		section {
@@ -124,8 +143,14 @@ body {
 			}
 
 			h2 {
-				font-size: 2.5em;
+				font-size: 1.5em;
 				margin-bottom: 0;
+
+				@media (min-width: 768px) {
+					font-size: 2.5em;
+
+				}
+
 
 				+ p {
 					margin-top: 5px;
